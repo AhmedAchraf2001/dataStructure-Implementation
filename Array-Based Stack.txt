@@ -1,0 +1,54 @@
+//stack implemotation
+#include <iostream>
+#include <bits/stdc++.h>
+using namespace std;
+
+class stuck{
+private :
+    int topItem;
+    int items[50];
+public :
+    stuck()
+    {
+        topItem=-1;
+    }
+    void push(int element)
+    {
+        if(topItem>49)
+         cout<<"the stack is full";
+        else {
+        topItem++;
+        items[topItem]=element;
+        }
+
+    }
+    void pop()
+    {
+        if(topItem<0)
+            cout<<"The Stack is empty"<<endl;
+        else
+           topItem--;
+    }
+    void getTop()
+    {
+
+        if(topItem<0)
+            cout<<"The Stack is empty"<<endl;
+        else
+           cout<<items[topItem]<<endl;
+    }
+    void print()
+    {
+        for(int i=topItem; i>=0;i--)
+        {
+            cout<<items[i]<<" ";
+        }
+        cout<<endl;
+    }
+};
+
+int main()
+{
+
+}
+

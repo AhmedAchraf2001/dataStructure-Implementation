@@ -1,0 +1,72 @@
+#include <iostream>
+#include <bits/stdc++.h>
+using namespace std;
+
+class arrList
+{
+private:
+    int len;
+    int maxSize;
+    int *arr;
+public:
+    arrList(int s=100)
+    {
+        maxSize = s;
+        len=0;
+        arr = new int[maxSize];
+    }
+    void insertAt(int pos, int el)
+    {
+       for(int i =len ;i >pos ;i--)
+       {
+           arr[i]=arr[i-1];
+       }
+       arr[pos]=el;
+       len++;
+    }
+    void insertAtEnd(int el)
+    {
+       arr[len]=el;
+       len++;
+    }
+    int searchF(int el)
+    {
+       for(int i =0 ;i <=len ;i++)
+       {
+          if(arr[i]==el)
+           {
+                return i;
+           }
+       }
+        return -1;
+
+    }
+
+    void insertWODup(int el)
+    {
+        if(searchF(el)==-1)
+        {
+            insertAtEnd(el);
+        }
+        else
+        {
+           cout<<"this element is ex....!";
+        }
+    }
+
+    void diplay()
+    {   cout<<"[ ";
+        for(int i =0 ;i<len;i++)
+        {
+            cout<<arr[i]<<" ";
+        }
+        cout<<"]"<<endl;
+    }
+};
+
+
+int main()
+{
+
+}
+
